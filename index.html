@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Audio Magic</title>
+    <link href='http://fonts.googleapis.com/css?family=Cherry+Swash:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        background-image: url(images/subtle_grunge.png);
+        background-repeat: repeat;
+        font-family: arial;
+      }
+      .app {
+        margin: 100px auto;
+        width: 800px;
+        text-align: center;
+      }
+      .recorder_view {
+        margin-top: 50px;
+      }
+      h1 {
+        margin-bottom: 0;
+        font-size: 100px;
+        color: #777;
+        font-family: 'Cherry Swash', cursive;
+        text-shadow: 0px 5px 0px #000;
+      }
+      .problem {
+        color: #B05B4A;
+      }
+      p {
+        color: #555;
+        margin-top: -10px;
+      }
+      .preview {
+        margin-top: 100px;
+      }
+      .player {
+        margin-bottom: 30px;
+      }
+      button {
+        position: relative;
+        color: rgba(255,255,255,1);
+        text-decoration: none;
+        background-color: rgba(219,87,5,1);
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 700;
+        font-size: 3em;
+        display: block;
+        padding: 4px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+        -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+        box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+        margin: 100px auto;
+        width: 160px;
+        text-align: center;
+        border: none;
+
+        -webkit-transition: all .1s ease;
+        -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+        -o-transition: all .1s ease;
+        transition: all .1s ease;
+      }
+
+      button:active {
+        -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+        -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+        box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+        position: relative;
+        top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Audio Magik</h1>
+      <p>Oh look, it's a proof of concept</p>
+      <div class="recorder_view">
+        <h3>Please give me permission to access your audio</h3>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="javascripts/frameworks/underscore-min.js"></script>
+    <script src="javascripts/frameworks/backbone-min.js"></script>
+    <script src="javascripts/frameworks/recorder.js"></script>
+    <script src="javascripts/namespace.js"></script>
+    <script src="javascripts/controllers/media_controller.js"></script>
+    <script src="javascripts/helpers/browser_adapter.js"></script>
+    <script src="javascripts/views/recorder_view.js"></script>
+    <script src="javascripts/lib/audio_recorder.js"></script>
+    <script src="javascripts/initialize.js"></script>
+  </body>
+</html>
