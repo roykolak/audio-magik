@@ -5,4 +5,4 @@ App.Helpers.BrowserAdapter =
 
   Recorder: window.Recorder
 
-  getUserMedia: navigator.getUserMedia || navigator.webkitGetUserMedia
+  getUserMedia: navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia
