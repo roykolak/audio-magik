@@ -8,18 +8,14 @@
     MediaController.prototype.askForAudio = function(callbacks) {
       var getUserMedia,
         _this = this;
-      if (App.Helpers.BrowserAdapter.AudioContext && App.Helpers.BrowserAdapter.getUserMedia) {
-        getUserMedia = App.Helpers.BrowserAdapter.getUserMedia;
-        return getUserMedia.call(navigator, {
-          audio: true
-        }, function(stream) {
-          return callbacks.allow(stream);
-        }, function(e) {
-          return callbacks.deny(e);
-        });
-      } else {
-        return callbacks.error();
-      }
+      getUserMedia = App.Helpers.BrowserAdapter.getUserMedia;
+      return getUserMedia.call(navigator, {
+        audio: true
+      }, function(stream) {
+        return callbacks.allow(stream);
+      }, function(e) {
+        return callbacks.deny(e);
+      });
     };
 
     return MediaController;
