@@ -5,7 +5,13 @@
     <title>Audio Magic</title>
     <link href='http://fonts.googleapis.com/css?family=Cherry+Swash:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+    <link href='styles/animate-custom.css' rel='stylesheet' type='text/css'>
     <style>
+      @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+      [class*="fontawesome-"]:before {
+        font-family: 'FontAwesome', sans-serif;
+      }
       body {
         background-image: url(images/subtle_grunge.png);
         background-repeat: repeat;
@@ -19,12 +25,45 @@
       .recorder_view {
         margin-top: 50px;
       }
+      .arrow {
+        display: none;
+        position:absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 120px;
+        color: #34CF48;
+        text-shadow: 0px 0px 1px #444;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .2s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-duration: 1s;
+        -moz-animation-delay: .2s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-fill-mode: both;
+        -ms-animation-duration: 1s;
+        -ms-animation-delay: .2s;
+        -ms-animation-timing-function: ease;
+        -ms-animation-fill-mode: both;
+        -o-animation-duration: 1s;
+        -o-animation-delay: .2s;
+        -o-animation-timing-function: ease;
+        -o-animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .2s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+      }
+      .asking .arrow {
+        display: block;
+      }
       h1 {
         margin-bottom: 0;
         font-size: 100px;
-        color: #777;
+        color: #34BFCF;
         font-family: 'Cherry Swash', cursive;
-        text-shadow: 0px 5px 0px #000;
+        text-shadow: 1px 1px 0px #000, 2px 2px 0px #111, 3px 3px 0px #222, 4px 4px 0px #333, 5px 5px 0px #444, 6px 6px 0px #555, 7px 7px 0px #666, 8px 8px 0px #777, 9px 9px 0px #888, 10px 10px 0px #999, 11px 11px 0px #AAA, 12px 12px 0px #BBB, 13px 13px 0px #CCC, 0px 0px 1px #000;
       }
       .problem {
         color: #B05B4A;
@@ -77,6 +116,7 @@
     </style>
   </head>
   <body>
+    <div class="fontawesome-arrow-up arrow pulse"></div>
     <div class="app">
       <h1>Audio Magik</h1>
       <p>Oh look, it's a proof of concept</p>

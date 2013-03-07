@@ -13,10 +13,12 @@
   } else if (!App.Helpers.BrowserAdapter.getUserMedia) {
     log('Your browser does not support getUserMedia');
   } else {
+    $('body').addClass('asking');
     mediaController = new App.Controller.MediaController();
     mediaController.askForAudio({
       allow: function(stream) {
         var audioRecorder;
+        $('body').removeClass('asking');
         audioRecorder = new App.Lib.AudioRecorder(stream);
         audioRecorder.create();
         return new App.Views.RecorderView({
@@ -24,6 +26,7 @@
         }).render();
       },
       deny: function() {
+        $('body').removeClass('asking');
         return log('You have denied audio access and that really hurts...');
       }
     });

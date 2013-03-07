@@ -8,11 +8,14 @@ else if !App.Helpers.BrowserAdapter.AudioContext
 else if !App.Helpers.BrowserAdapter.getUserMedia
   log('Your browser does not support getUserMedia')
 else
+  $('body').addClass('asking')
   mediaController = new App.Controller.MediaController()
   mediaController.askForAudio
     allow: (stream) ->
+      $('body').removeClass('asking')
       audioRecorder = new App.Lib.AudioRecorder(stream)
       audioRecorder.create()
       new App.Views.RecorderView(audioRecorder: audioRecorder).render()
     deny: ->
+      $('body').removeClass('asking')
       log('You have denied audio access and that really hurts...')
