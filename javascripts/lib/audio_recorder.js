@@ -9,9 +9,8 @@
 
     AudioRecorder.prototype.create = function() {
       var input;
-      this.audioContext = new App.Helpers.BrowserAdapter.AudioContext;
+      this.audioContext = new App.Helpers.BrowserAdapter.AudioContext();
       input = this.audioContext.createMediaStreamSource(this.stream);
-      input.connect(this.audioContext.destination);
       return this.recorder = new App.Helpers.BrowserAdapter.Recorder(input);
     };
 
