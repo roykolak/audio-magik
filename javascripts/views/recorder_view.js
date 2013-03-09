@@ -13,7 +13,7 @@
 
     RecorderView.prototype.el = '.recorder_view';
 
-    RecorderView.prototype.template = "<div>\n  <div class=\"controls\">\n    <button class=\"start\">record</button>\n    <button class=\"stop\" style=\"display: none\">stop</button>\n  </div>\n  <div class=\"preview\" style=\"display: none\">\n    <div class=\"player\">\n      <audio controls=\"true\" src=\"\"/>\n    </div>\n    <a href=\"#\" class=\"again\">Record again</a>\n  </div>\n</div>";
+    RecorderView.prototype.template = "<div>\n  <div class=\"controls\">\n    <button class=\"start\">record</button>\n    <button class=\"stop\">stop</button>\n  </div>\n  <div class=\"preview\" style=\"display: none\">\n    <div class=\"player\">\n      <audio controls=\"true\" src=\"\"/>\n    </div>\n    <a href=\"#\" class=\"again\">Record again</a>\n  </div>\n</div>";
 
     RecorderView.prototype.initialize = function(options) {
       return this.audioRecorder = options.audioRecorder;
@@ -26,7 +26,8 @@
     };
 
     RecorderView.prototype.render = function() {
-      return this.$el.html(this.template);
+      this.$el.html(this.template);
+      return this.resetControls();
     };
 
     RecorderView.prototype.onStartClicked = function(ev) {
@@ -44,6 +45,7 @@
       this.updateAudioPreview();
       this.audioRecorder.clear();
       return this.$('.controls').fadeOut(function() {
+        _this.resetControls();
         return _this.$('.preview').fadeIn();
       });
     };
@@ -62,6 +64,11 @@
         url = URL.createObjectURL(blob);
         return this.$('audio').attr('src', url);
       });
+    };
+
+    RecorderView.prototype.resetControls = function() {
+      this.$('.start').show();
+      return this.$('.stop').hide();
     };
 
     return RecorderView;

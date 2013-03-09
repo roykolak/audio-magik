@@ -5,7 +5,7 @@ class App.Views.RecorderView extends Backbone.View
     <div>
       <div class="controls">
         <button class="start">record</button>
-        <button class="stop" style="display: none">stop</button>
+        <button class="stop">stop</button>
       </div>
       <div class="preview" style="display: none">
         <div class="player">
@@ -26,6 +26,7 @@ class App.Views.RecorderView extends Backbone.View
 
   render: ->
     @$el.html(@template)
+    @resetControls()
 
   onStartClicked: (ev) ->
     ev.preventDefault()
@@ -40,6 +41,7 @@ class App.Views.RecorderView extends Backbone.View
     @updateAudioPreview()
     @audioRecorder.clear()
     @$('.controls').fadeOut =>
+      @resetControls()
       @$('.preview').fadeIn()
 
   onAgainClicked: (e) ->
@@ -51,3 +53,7 @@ class App.Views.RecorderView extends Backbone.View
     @audioRecorder.export (blob) ->
       url = URL.createObjectURL(blob)
       @$('audio').attr('src', url)
+
+  resetControls: ->
+    @$('.start').show()
+    @$('.stop').hide()
