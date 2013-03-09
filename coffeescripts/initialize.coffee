@@ -1,13 +1,13 @@
 log = (message) ->
   $(".recorder_view").html("<h3 class='problem'>#{message}</h3>")
 
-if !App.Helpers.BrowserAdapter.AudioContext && !App.Helpers.BrowserAdapter.getUserMedia
-  log('Your browser does not support getUserMedia or AudioContext')
-else if !App.Helpers.BrowserAdapter.AudioContext
-  log('Your browser does not support AudioContext')
-else if !App.Helpers.BrowserAdapter.getUserMedia
-  log('Your browser does not support getUserMedia')
-else
+browser = new App.Models.Browser
+  audioContext: !!App.Helpers.BrowserAdapter.AudioContext
+  getUserMedia: !!App.Helpers.BrowserAdapter.getUserMedia
+
+new App.Views.SupportView(model: browser).render()
+
+if browser.valid()
   $('body').addClass('asking')
   mediaController = new App.Controller.MediaController()
   mediaController.askForAudio
@@ -19,3 +19,5 @@ else
     deny: ->
       $('body').removeClass('asking')
       log('You have denied audio access and that really hurts...')
+else
+  $('.recorder_view').hide()

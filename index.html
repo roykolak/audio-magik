@@ -27,7 +27,7 @@
       }
       .arrow {
         display: none;
-        position:absolute;
+        position:fixed;
         top: 20px;
         right: 30px;
         font-size: 120px;
@@ -69,14 +69,31 @@
         color: #B05B4A;
       }
       p {
-        color: #555;
+        color: #000;
         margin-top: -10px;
+        font-size: 12px;
       }
       .preview {
         margin-top: 100px;
       }
       .player {
         margin-bottom: 30px;
+      }
+      .support {
+        list-style-type: none;
+      }
+      .icon {
+        margin-right: 5px;
+      }
+      .supported {
+        color: #1C9416;
+      }
+      .unsupported {
+        color: #C71A1A;
+      }
+      .supported, .unsupported {
+        display: inline;
+        margin:0 10px;
       }
       button {
         position: relative;
@@ -120,19 +137,24 @@
     <div class="app">
       <h1>Audio Magik</h1>
       <p>Oh look, it's a proof of concept</p>
+      <div class="support_view"></div>
       <div class="recorder_view">
         <h3>Please give me permission to access your audio</h3>
       </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
 
     <script src="javascripts/frameworks/underscore-min.js"></script>
     <script src="javascripts/frameworks/backbone-min.js"></script>
     <script src="javascripts/frameworks/recorder.js"></script>
+
     <script src="javascripts/namespace.js"></script>
     <script src="javascripts/controllers/media_controller.js"></script>
     <script src="javascripts/helpers/browser_adapter.js"></script>
+    <script src="javascripts/models/browser.js"></script>
     <script src="javascripts/views/recorder_view.js"></script>
+    <script src="javascripts/views/support_view.js"></script>
     <script src="javascripts/lib/audio_recorder.js"></script>
     <script src="javascripts/initialize.js"></script>
   </body>
