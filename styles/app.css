@@ -4,9 +4,11 @@
   font-family: 'FontAwesome', sans-serif;
 }
 body {
-  background-image: url(images/subtle_grunge.png);
+  background-image: url(../images/subtle_grunge.png);
   background-repeat: repeat;
   font-family: arial;
+  margin: 0;
+  padding: 0;
 }
 .app {
   margin: 100px auto;
@@ -54,7 +56,17 @@ h1 {
   font-size: 100px;
   color: #34BFCF;
   font-family: 'Cherry Swash', cursive;
-  text-shadow: 1px 1px 0px #000, 2px 2px 0px #111, 3px 3px 0px #222, 4px 4px 0px #333, 5px 5px 0px #444, 6px 6px 0px #555, 7px 7px 0px #666, 8px 8px 0px #777, 9px 9px 0px #888, 10px 10px 0px #999, 11px 11px 0px #AAA, 12px 12px 0px #BBB, 13px 13px 0px #CCC, 0px 0px 1px #000;
+}
+.poc {
+  position: fixed;
+  bottom: 0;
+  padding: 20px 0;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  background: #000;
+  color: #FFF;
+  width: 100%;
 }
 .problem {
   color: #B05B4A;
@@ -70,7 +82,13 @@ p {
 .player {
   margin-bottom: 30px;
 }
+.action {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
 .support {
+  margin: 0;
   list-style-type: none;
 }
 .icon {
